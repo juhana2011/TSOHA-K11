@@ -1,0 +1,38 @@
+<body>
+<p>
+<table border>
+<tr><td><b>REKISTERINUMERO</b></td>
+<td><b>NIMI</b></td>
+<td><b>SYNTYMAAIKA</b></td>
+<td><b>VARI</b></td>
+<td><b>ISA</b></td>
+<td><b>EMA</b></td>
+<td><b>ROTU</b></td>
+<td><b>OMISTAJA</b></td>
+<td><b>TILA</b></td>
+<td><b>LUT</b></td>
+</tr>
+
+
+<? while ($rivi = $dogs->fetch()) {
+   echo "<tr>";
+   echo "<td>" . $rivi["reknro"] . "</td>";
+   echo "<td>" . $rivi["nimi"] . "</td>";
+   echo "<td>" . $rivi["syntynyt"] . "</td>";
+   echo "<td>" . $rivi["vari"] . "</td>";
+   echo "<td>" . $rivi["isa"] . "</td>";
+   echo "<td>" . $rivi["ema"] . "</td>";
+   echo "<td>" . $rivi["rotu"] . "</td>";
+   echo "<td>" . $rivi["omistaja"] . "</td>";
+   if ($rivi["koiran_tila"] == 1)
+       echo "<td>" . "Active" . "</td>";
+   else echo "<td>" . "Inactive" . "</td>";
+   if (is_null ($rivi["koetulos_lut"]))
+   echo "<td>" . "-" . "</td>";   
+   else echo "<td>" . $rivi["koetulos_lut"] . "</td>";
+   echo "</tr>";
+}
+echo "</table>";
+?>
+</p>
+</body>
