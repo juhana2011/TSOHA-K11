@@ -1,19 +1,65 @@
 <h1>Lis&auml;&auml; uusi koira</h1>
+<table>
 <form action="" method="post">
-<p>Rekisterinumero: <br>
-<input type="text" name="reknro"></p>
-<p>Nimi: <br>
-<input type="text" name="nimi"></p>
-<p>Syntynyt: <br>
-<input type="text" name="syntynyt"></p>
-<p>V&auml;ri: <br>
-<input type="text" name="vari"></p>
-<p>Is&auml;: <br>
-<input type="text" name="isa"></p>
-<p>Em&auml;: <br>
-<input type="text" name="ema"></p>
-<p>Rotu: <br>
-<select name="rotu">
+
+<tr><td>Rekisterinumero:</td><td><input type="text" name="reknro" maxlength="11"/></td>
+<td>&nbsp;&nbsp;&nbsp;</td><td>N&auml;yttelytulos:</td><td><select name="nayttelytulos">
+<option value="CIB">C.I.B</option>
+<option value="FI MVA">FI MVA</option>
+<option value="CACIB">CACIB</option>
+<option value="VACACIB">VARACACIB</option>
+<option value="SERT">SERT</option>
+<option value="VASERT">VARASERT</option>
+<option value="ERI">ERI</option>
+<option value="EH" selected="selected">EH</option>
+<option value="H">H</option>
+<option value="T">T</option>
+</select></td></tr>
+
+
+<tr><td>Nimi:</td><td><input type="text" name="nimi" maxlength="40"/></td><td>&nbsp;&nbsp;&nbsp;</td><td>LUT-tulos:</td><td><select name="koetulos_lut"><option value="KVAL">FI KVA-L</option>
+<option value="LUTA">LUTA</option>
+<option value="LUTB">LUTB</option>
+<option value="LUTC">LUTC</option>
+<option value="LUTD">LUTD</option>
+<option value="LUTE">LUTE</option>
+<option value="" selected="selected"></option>
+</select></td></tr>
+
+<tr><td>Syntynyt:</td><td><input type="text" name="syntynyt" maxlength="10"/></td>
+<td>&nbsp;&nbsp;&nbsp;</td><td>M&Auml;AJ-tulos:</td><td><select name="koetulos_maaj">
+<option value="KVAA">FI KVA-A</option>
+<option value="MAAJ1">M&Auml;AJ-1</option>
+<option value="MAAJ2">M&Auml;AJ-2</option>
+<option value="MAAJ3">M&Auml;AJ-3</option>
+<option value="" selected="selected"></option>
+</select></td></tr>
+
+<tr><td>V&auml;ri:</td><td><input type="text" name="vari" maxlength="25"/></td>
+<td>&nbsp;&nbsp;&nbsp;</td><td>LUME-tulos:</td><td><select name="koetulos_lume">
+<option value="KVAM">FI KVA-M</option>
+<option value="LUME1">LUME1</option>
+<option value="" selected="selected"></option>
+</select></td></tr>
+
+<tr><td>Is&auml;:</td><td><input type="text" name="isa" maxlength="40"/></td>
+<td>&nbsp;&nbsp;&nbsp;</td><td>VERI-tulos:</td><td><select name="koetulos_veri">
+<option value="KVAV">FI KVA-V</option>
+<option value="VERI1">VERI-1</option>
+<option value="VERI2">VERI-2</option>
+<option value="VERI3">VERI-3</option>
+<option value="" selected="selected"></option>
+</select></td></tr>
+
+<tr><td>Em&auml;:</td><td><input type="text" name="ema" maxlength="40"/></td>
+<td>&nbsp;&nbsp;&nbsp;</td><td>PIKA-tulos:</td><td><select name="koetulos_pika">
+<option value="PIKA1">PIKA1</option>
+<option value="" selected="selected"></option>
+</select></td></tr>
+
+
+<tr><td>Rotu:</td><td><select name="rotu">
+
 <option value="KKKA">karkeakarvainen kaniinim&auml;yr&auml;koira</option>
 <option value="LKKA">lyhytkarvainen kaniinim&auml;yr&auml;koira</option>
 <option value="PKKA">pitk&auml;karvainen kaniinim&auml;yr&auml;koira</option>
@@ -22,12 +68,37 @@
 <option value="PKK">pitk&auml;karvainen k&auml;&auml;pi&ouml;m&auml;yr&auml;koira</option>
 <option value="KK" selected="selected">karkeakarvainen m&auml;yr&auml;koira</option>
 <option value="LK">lyhytkarvainen m&auml;yr&auml;koira</option>
-<option value="PK">pitk&auml;karvainen m&auml;yr&auml;koira</option>
-</select>
-</p>
-<p>Omistaja: <br>
-<input type="text" name="omistaja"></p>
-<p>Koiran tila: <br>
-<input type="text" name="koiran_tila"></p>
-<input type="submit" value="Uusi koira">
+<option value="PK">pitk&auml;karvainen m&auml;yr&auml;koira</option></select></td>
+<td>&nbsp;&nbsp;&nbsp;</td><td>MEJ&Auml;-tulos:</td><td><select name="koetulos_meja">
+<option value="JVA">FI JVA</option>
+<option value="VOI1">VOI1</option>
+<option value="VOI2">VOI2</option>
+<option value="VOI3">VOI3</option>
+<option value="AVO1">AVO1</option>
+<option value="AVO2">AVO2</option>
+<option value="AVO3">AVO3</option>
+<option value="" selected="selected"></option>
+</select></td></tr>
+
+
+
+<tr><td>Omistaja:</td><td><input type="text" name="omistaja" maxlength="65"/></td>
+<td>&nbsp;&nbsp;&nbsp;</td><td>VAHI-tulos:</td><td><select name="koetulos_vahi">
+<option value="VAHI1">VAHI1</option>
+<option value="" selected="selected"></option>
+</select></td></tr>
+
+<tr><td><input type="hidden" name="koiran_tila" value="2"/></td>
+<td>&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;</td><td>HIRV-J-tulos:</td><td><select name="koetulos_hirvj">
+<option value="KVAJ">FI KVA-J</option>
+<option value="HIRVJ1">HIRV-J1</option>
+<option value="" selected="selected"></option>
+</select></td></tr>
+
+<tr><td><input type="submit" value="L&auml;het&auml; koiran tiedot"/><input type="reset";/></td>
+</tr>
+
 </form>
+
+</table>
+
