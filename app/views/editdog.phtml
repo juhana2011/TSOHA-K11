@@ -1,0 +1,37 @@
+<form id="form1" name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+
+<tr><td>Rekisterinumero:</td><td><input type="text" name="reknro" maxlength="11" value="<?php echo $reknro; ?>"/></td>
+
+<td>&nbsp;&nbsp;&nbsp;</td><td>M&Auml;AJ-tulos:</td><td><select name="koetulos_maaj">
+<option value=""></option>
+<option value="KVAA"<?php echo $kvaa_sel; ?>>FI KVA-A</option>
+<option value="MAAJ1"<?php echo $maaj1_sel; ?>>M&Auml;AJ-1</option>
+<option value="MAAJ2"<?php echo $maaj2_sel; ?>>M&Auml;AJ-2</option>
+<option value="MAAJ3"<?php echo $maaj3_sel; ?>>M&Auml;AJ-3</option>
+
+</select></td></tr>
+
+</form>
+
+<?php echo($reknro);?><br>
+<?php echo($nimi);?><br>
+<?php echo($syntynyt);?><br>
+<?php echo($vari);?><br>
+<?php echo($isa);?><br>
+<?php echo($ema);?><br>
+<?php echo($rotu);?><br>
+<?php echo($omistaja);?><br>
+<?php echo($koiran_tila);?><br>
+<?php echo($selkatulos);?><br>
+<?php echo($selka_huom);?><br>
+<?php echo($selka_vaaraika);?><br>
+<?php echo($polvitulos);?><br>
+<?php echo($nayttelytulos);?><br>
+<?php echo($koetulos_lut);?><br>
+<?php echo($koetulos_maaj);?><br>
+<?php echo($koetulos_lume);?><br>
+<?php echo($koetulos_veri);?><br>
+<?php echo($koetulos_pika);?><br>
+<?php echo($koetulos_meja);?><br>
+<?php echo($koetulos_vahi);?><br>
+<?php echo($koetulos_hirvj);?><br>
