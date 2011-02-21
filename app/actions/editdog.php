@@ -301,11 +301,11 @@ $tila2_sel = '';
     //Setting existing values from db for form field default
                                                             
 if ($koiran_tila == '0') {                            
-        $tila0 = ' SELECTED';                            
+        $tila0_sel = ' SELECTED';                            
 }   elseif ($koiran_tila == '1') {                  
-        $tila1 = ' SELECTED';                          
+        $tila1_sel = ' SELECTED';                          
 }   elseif ($koiran_tila == '2') {
-        $tila2 = ' SELECTED';
+        $tila2_sel = ' SELECTED';
 } else {}                                                   
 //---------------------------------KOIRAN_TILA PART END--------------
 
@@ -449,3 +449,7 @@ if ($polvitulos == '0') {
         $polvitulos2_sel = ' SELECTED';                          
 } else {}                                                   
 //---------------------------------POLVITULOS PART END--------------
+
+
+
+

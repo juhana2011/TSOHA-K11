@@ -1,5 +1,5 @@
 <table>
-<form id="form1" name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+<form action="" method="post">
 
 <tr><td>Rekisterinumero:</td><td><input type="text" name="reknro" maxlength="11" value="<?php echo $reknro; ?>"/></td>
 
@@ -167,8 +167,11 @@ if($osoiterivi == $omistaja) {
 <option value="1"<?php echo $polvitulos1_sel;?>>Oikea</option>
 <option value="2"<?php echo $polvitulos2_sel;?>>Vasen+Oikea</option>
 </select></td></tr>
+<tr></tr>
+<tr><td><input type="submit" name="nappula" value="Muuta" /></td></tr>
+<tr><td><input type="submit" name="nappula" value="Poista" /></td></tr>
 
-
-</form>
+ </form>
 </table>
-
+<br><br>
+<a href="http://localhost/?action=index">Etusivulle</a><br>

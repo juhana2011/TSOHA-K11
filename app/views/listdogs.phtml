@@ -24,10 +24,12 @@
    <td><?php echo $rivi["ema"];?></td>
    <td><?php echo $rivi["rotu"];?></td>
    <td><?php echo $rivi["omistaja"];?></td>
-   <td><?php echo ($rivi["koiran_tila"] == 1 ? 'Active' : 'Inactive'); ?></td>
-   <td><?php echo (!empty($rivi["koetulos_lut"]) ? $rivi["koetulos_lut"] : '-'); ?> </td>
+   <td><?php echo $rivi["koiran_tila"];?></td>
+   <td><?php echo $rivi["koetulos_lut"]; ?> </td>
 
    <td><a href="<?php echo Atomik::url('/editdog',array('reknro'=>$rivi["reknro"]));?>">Muokkaa</a> </td>
    </tr>
 <?php }?>
 </table>
+<br><br><br>
+<a href="http://localhost/?action=index">Etusivulle</a><br>

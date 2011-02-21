@@ -1,7 +1,7 @@
 <?php
-	
-		// Set a custom error message if required field information is missing
-	Atomik::set('app/filters/required_message', '%s on pakollinen tieto !');
+      if ($_POST['nappula'] == 'Muuta') { 
+	// Set a custom error message if required field information is missing
+	  Atomik::set('app/filters/required_message', '%s on pakollinen tieto !');
 
 
 		// Set needed filters for form field information validity check to
@@ -31,7 +31,7 @@
             'omistaja' => array('filter' => 'validate_email',
 				'required' => true,
 				'message' => 'email-osoite vaarin'),
-            'koiran_tila' => array('filter' => '/d{0,2}/',
+            'koiran_tila' => array('filter' => '/.{0,2}/',
 			      'required' => true,
 			      'message' => 'Koiran tilatieto puuttuu tai liian pitk&auml;'),
 	    'selkatulos' => array('filter' => '/.{0,3}/',
@@ -51,7 +51,7 @@
 			      'message' => 'Koiran n&auml;yttelytulos puuttuu tai liian pitk&auml;'),
             'koetulos_lut' => array('filter' => '/.{0,9}/',
 			      'required' => false,
-			      'message' => 'Koiran LUT-tulos liian pitk&auml;'),
+			      'message' => 'Koiran LUT-tulos puuttuu tai liian pitk&auml;'),
             'koetulos_maaj' => array('filter' => '/.{0,10}/',
 			      'required' => false,
 			      'message' => 'Koiran M&Auml;AJ-tulos puuttuu tai liian pitk&auml;'),
@@ -74,25 +74,31 @@
 			      'required' => false,
 			      'message' => 'Koiran HIRVJ-tulos puuttuu tai liian pitk&auml;'),
 	);
-		
+		// Check if Muuta-button is pressed
+			
+
 		// Comparison of POST and rule variables to avoid problems,Framework's own
-	if (($data = Atomik::filter($_POST, $rule)) === false) {
-	  Atomik::flash(A('app/filters/messages'), 'error');
-	  return;
-	}
-	 
+			if (($data = Atomik::filter($_POST, $rule)) === false) {
+	  			Atomik::flash(A('app/filters/messages'), 'error');
+	  		return;
+			}
+	 	 
 		// Create two separate array variables for inserting data into two separate tables      
-	$perustiedot = array_slice($data, 0,9, true);
-	$tulostiedot = array_slice($data, 9,13, true);
-	$tulostiedot['koira'] = $perustiedot['reknro'];			
+			$perustiedot = array_slice($data, 0,9, true);
+			$tulostiedot = array_slice($data, 9,13, true);
+				
 		// Data insert into database tables after validation procedures
 		// If succesful, informs user that all ok
-	Atomik_Db::insert('koirat', $perustiedot);
-	Atomik_Db::insert('koirien_tulokset', $tulostiedot);
+		Atomik_Db::update('koirat', $perustiedot,array('reknro' => $perustiedot['reknro']));
+		Atomik_Db::update('koirien_tulokset', $tulostiedot,array('koira' => $perustiedot['reknro']));
 
-	Atomik::flash('Koira lis&auml;tty onnistuneesti!', 'success');
-	Atomik::redirect('listdogs');
+		Atomik::flash('Koiran tiedot muutettu onnistuneesti!', 'success');
+		Atomik::redirect('listdogs');
+    } elseif ($_POST['nappula'] == 'Poista') {
+            echo "Koiranpoistorutiini";
+	   } else {}
+ 
 
-        
-   
+
+
 
