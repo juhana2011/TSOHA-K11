@@ -1,37 +1,174 @@
+<table>
 <form id="form1" name="form1" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 
 <tr><td>Rekisterinumero:</td><td><input type="text" name="reknro" maxlength="11" value="<?php echo $reknro; ?>"/></td>
 
-<td>&nbsp;&nbsp;&nbsp;</td><td>M&Auml;AJ-tulos:</td><td><select name="koetulos_maaj">
+<td>&nbsp;&nbsp;&nbsp;</td><td>N&auml;yttelytulos:</td>
+<td><select name="nayttelytulos">
+<option value="CIB"<?php echo $cib_sel; ?>>C.I.B</option>
+<option value="FI MVA"<?php echo $fimva_sel; ?>>FI MVA</option>
+<option value="CACIB"<?php echo $cacib_sel; ?>>CACIB</option>
+<option value="VACACIB"<?php echo $vacacib_sel; ?>>VARACACIB</option>
+<option value="SERT"<?php echo $sert_sel; ?>>SERT</option>
+<option value="VASERT"<?php echo $vasert_sel; ?>>VARASERT</option>
+<option value="ERI"<?php echo $eri_sel; ?>>ERI</option>
+<option value="EH"<?php echo $eh_sel; ?>>EH</option>
+<option value="H"<?php echo $h_sel; ?>>H</option>
+<option value="T"<?php echo $t_sel; ?>>T</option>
+</select></td></tr>
+
+<tr><td>Nimi:</td><td><input type="text" name="nimi" maxlength="40" value="<?php echo $nimi; ?>"/> </td>
+
+<td>&nbsp;&nbsp;&nbsp;</td><td>LUT-tulos:</td>
+<td><select name="koetulos_lut">
+<option value=""></option>
+<option value="KVAL"<?php echo $kval_sel; ?>>FI KVA-L</option>
+<option value="LUTA"<?php echo $luta_sel; ?>>LUTA</option>
+<option value="LUTB"<?php echo $lutb_sel; ?>>LUTB</option>
+<option value="LUTC"<?php echo $lutc_sel; ?>>LUTC</option>
+<option value="LUTD"<?php echo $lutd_sel; ?>>LUTD</option>
+<option value="LUTE"<?php echo $lute_sel; ?>>LUTE</option>
+</select></td></tr>
+
+<tr><td>Syntynyt:</td><td><input type="text" name="syntynyt" maxlength="10" value="<?php echo $syntynyt; ?>"/></td>
+
+<td>&nbsp;&nbsp;&nbsp;</td><td>M&Auml;AJ-tulos:</td>
+<td><select name="koetulos_maaj">
 <option value=""></option>
 <option value="KVAA"<?php echo $kvaa_sel; ?>>FI KVA-A</option>
 <option value="MAAJ1"<?php echo $maaj1_sel; ?>>M&Auml;AJ-1</option>
 <option value="MAAJ2"<?php echo $maaj2_sel; ?>>M&Auml;AJ-2</option>
 <option value="MAAJ3"<?php echo $maaj3_sel; ?>>M&Auml;AJ-3</option>
-
 </select></td></tr>
 
-</form>
+<tr><td>V&auml;ri:</td><td><input type="text" name="vari" maxlength="25" value="<?php echo $vari; ?>"/></td>
 
-<?php echo($reknro);?><br>
-<?php echo($nimi);?><br>
-<?php echo($syntynyt);?><br>
-<?php echo($vari);?><br>
-<?php echo($isa);?><br>
-<?php echo($ema);?><br>
-<?php echo($rotu);?><br>
-<?php echo($omistaja);?><br>
-<?php echo($koiran_tila);?><br>
-<?php echo($selkatulos);?><br>
-<?php echo($selka_huom);?><br>
-<?php echo($selka_vaaraika);?><br>
-<?php echo($polvitulos);?><br>
-<?php echo($nayttelytulos);?><br>
-<?php echo($koetulos_lut);?><br>
-<?php echo($koetulos_maaj);?><br>
-<?php echo($koetulos_lume);?><br>
-<?php echo($koetulos_veri);?><br>
-<?php echo($koetulos_pika);?><br>
-<?php echo($koetulos_meja);?><br>
-<?php echo($koetulos_vahi);?><br>
-<?php echo($koetulos_hirvj);?><br>
+<td>&nbsp;&nbsp;&nbsp;</td><td>LUME-tulos:</td><td><select name="koetulos_lume">
+<option value=""></option>
+<option value="KVAM"<?php echo $kvam_sel; ?>>FI KVA-M</option>
+<option value="LUME1"<?php echo $lume1_sel; ?>>LUME1</option>
+</select></td></tr>
+
+<tr><td>Is&auml;:</td><td><input type="text" name="isa" maxlength="40" value="<?php echo $isa; ?>"/></td>
+
+<td>&nbsp;&nbsp;&nbsp;</td><td>VERI-tulos:</td><td><select name="koetulos_veri">
+<option value=""></option>
+<option value="KVAV"<?php echo $kvav_sel; ?>>FI KVA-V</option>
+<option value="VERI1"<?php echo $veri1_sel; ?>>VERI-1</option>
+<option value="VERI2"<?php echo $veri2_sel; ?>>VERI-2</option>
+<option value="VERI3"<?php echo $veri3_sel; ?>>VERI-3</option>
+</select></td></tr>
+
+<tr><td>Em&auml;:</td><td><input type="text" name="ema" maxlength="40" value="<?php echo $ema; ?>"/></td>
+
+<td>&nbsp;&nbsp;&nbsp;</td><td>PIKA-tulos:</td><td><select name="koetulos_pika">
+<option value=""></option>
+<option value="PIKA1"<?php echo $pika1_sel; ?>>PIKA1</option>
+</select></td></tr>
+
+<tr><td>Rotu:</td><td><select name="rotu">
+<option value="KKKA"<?php echo $kkka_sel;?>>karkeakarvainen kaniinim&auml;yr&auml;koira</option>
+<option value="LKKA"<?php echo $lkka_sel;?>>lyhytkarvainen kaniinim&auml;yr&auml;koira</option>
+<option value="PKKA"<?php echo $pkka_sel;?>>pitk&auml;karvainen kaniinim&auml;yr&auml;koira</option>
+<option value="KKK"<?php echo $kkk_sel;?>>karkeakarvainen k&auml;&auml;pi&ouml;m&auml;yr&auml;koira</option>
+<option value="LKK"<?php echo $lkk_sel;?>>lyhytkarvainen k&auml;&auml;pi&ouml;m&auml;yr&auml;koira</option>
+<option value="PKK"<?php echo $pkk_sel;?>>pitk&auml;karvainen k&auml;&auml;pi&ouml;m&auml;yr&auml;koira</option>
+<option value="KK"<?php echo $kk_sel;?>>karkeakarvainen m&auml;yr&auml;koira</option>
+<option value="LK"<?php echo $lk_sel;?>>lyhytkarvainen m&auml;yr&auml;koira</option>
+<option value="PK"<?php echo $pk_sel;?>>pitk&auml;karvainen m&auml;yr&auml;koira</option></select></td>
+
+<td>&nbsp;&nbsp;&nbsp;</td><td>MEJ&Auml;-tulos:</td><td><select name="koetulos_meja">
+
+<option value=""></option>
+<option value="JVA"<?php echo $jva_sel;?>>FI JVA</option>
+<option value="VOI1"<?php echo $voi1_sel;?>>VOI1</option>
+<option value="VOI2"<?php echo $voi2_sel;?>>VOI2</option>
+<option value="VOI3"<?php echo $voi3_sel;?>>VOI3</option>
+<option value="AVO1"<?php echo $avo1_sel;?>>AVO1</option>
+<option value="AVO2"<?php echo $avo2_sel;?>>AVO2</option>
+<option value="AVO3"<?php echo $avo3_sel;?>>AVO3</option>
+</select></td></tr>
+
+<tr><td>Omistaja:</td><td><select name="omistaja">
+ <?php
+foreach ($taulu as $osoiterivi) {
+if($osoiterivi == $omistaja) {
+ echo "<option value=\"$osoiterivi\" SELECTED>$osoiterivi</option>";
+ } else {
+  echo "<option value=\"$osoiterivi\">$osoiterivi</option>";
+  }
+}
+?>
+</select></td>
+
+<td>&nbsp;&nbsp;&nbsp;</td><td>VAHI-tulos:</td><td><select name="koetulos_vahi">
+<option value=""></option>
+<option value="VAHI1"<?php echo $vahi1_sel;?>>VAHI1</option>
+</select></td></tr>
+
+<tr><td>Koiran tila:</td><td><select name="koiran_tila">
+<option value="0"<?php echo $tila0_sel;?>>Poistettu</option>
+<option value="1"<?php echo $tila1_sel;?>>Ok</option>
+<option value="2"<?php echo $tila2_sel;?>>Odottaa</option>
+</select></td>
+
+<td>&nbsp;&nbsp;&nbsp;</td><td>HIRV-J-tulos:</td><td><select name="koetulos_hirvj">
+<option value=""></option>
+<option value="KVAJ"<?php echo $kvaj_sel;?>>FI KVA-J</option>
+<option value="HIRVJ1"<?php echo $hirvj1_sel;?>>HIRV-J1</option>
+</select></td></tr>
+
+
+<tr><td>Selk&auml;tulos:</td><td><select name="selkatulos">
+<option value="">Ei kuvattu</option>
+<option value="K0"<?php echo $selkatulos0_sel;?>>K0</option>
+<option value="K1"<?php echo $selkatulos1_sel;?>>K1</option>
+<option value="K2"<?php echo $selkatulos2_sel;?>>K2</option>
+<option value="K3"<?php echo $selkatulos3_sel;?>>K3</option>
+<option value="K4"<?php echo $selkatulos4_sel;?>>K4</option>
+<option value="K5"<?php echo $selkatulos5_sel;?>>K5</option>
+<option value="K6"<?php echo $selkatulos6_sel;?>>K6</option>
+<option value="K7"<?php echo $selkatulos7_sel;?>>K7</option>
+<option value="K8"<?php echo $selkatulos8_sel;?>>K8</option>
+<option value="K9"<?php echo $selkatulos9_sel;?>>K9</option>
+<option value="K10"<?php echo $selkatulos10_sel;?>>K10</option>
+<option value="K11"<?php echo $selkatulos11_sel;?>>K11</option>
+<option value="K12"<?php echo $selkatulos12_sel;?>>K12</option>
+<option value="K13"<?php echo $selkatulos13_sel;?>>K13</option>
+<option value="K14"<?php echo $selkatulos14_sel;?>>K14</option>
+<option value="K15"<?php echo $selkatulos15_sel;?>>K15</option>
+<option value="K16"<?php echo $selkatulos16_sel;?>>K16</option>
+<option value="K17"<?php echo $selkatulos17_sel;?>>K17</option>
+<option value="K18"<?php echo $selkatulos18_sel;?>>K18</option>
+<option value="K19"<?php echo $selkatulos19_sel;?>>K19</option>
+<option value="K20"<?php echo $selkatulos20_sel;?>>K20</option>
+<option value="K21"<?php echo $selkatulos21_sel;?>>K21</option>
+<option value="K22"<?php echo $selkatulos22_sel;?>>K22</option>
+<option value="K23"<?php echo $selkatulos23_sel;?>>K23</option>
+<option value="K24"<?php echo $selkatulos24_sel;?>>K24</option>
+<option value="K25"<?php echo $selkatulos25_sel;?>>K25</option>
+</select></td>
+
+<td>&nbsp;&nbsp;&nbsp;</td><td>Selk&auml; muuhuom:</td><td><select name="selka_huom">
+<option value=""></option>
+<option value="FALSE"<?php echo $selkahuom0_sel;?>>Ei huomautettavaa</option>
+<option value="TRUE"<?php echo $selkahuom1_sel;?>>Huomautettavaa</option>
+</select></td></tr>
+
+<tr><td>Selk&auml;kuvausik&auml;:</td><td><select name="selka_vaaraika">
+<option value=""></option>
+<option value="FALSE"<?php echo $selkahuom0_sel;?>>Kuva oikeassa i&auml;ss&auml;</option>
+<option value="TRUE"<?php echo $selkahuom1_sel;?>>Kuva v&auml;&auml;r&auml;ss&auml; i&auml;ss&auml;</option>
+</select></td>
+
+<td>&nbsp;&nbsp;&nbsp;</td><td>Polvitulos:</td><td><select name="polvitulos">
+<option value=""></option>
+<option value="0"<?php echo $polvitulos0_sel;?>>Vasen</option>
+<option value="1"<?php echo $polvitulos1_sel;?>>Oikea</option>
+<option value="2"<?php echo $polvitulos2_sel;?>>Vasen+Oikea</option>
+</select></td></tr>
+
+
+</form>
+</table>
+

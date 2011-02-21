@@ -1,5 +1,4 @@
-<body>
-<p>
+
 <table border>
 <tr><td><b>REKISTERINUMERO</b></td>
 <td><b>NIMI</b></td>
@@ -11,28 +10,24 @@
 <td><b>OMISTAJA</b></td>
 <td><b>TILA</b></td>
 <td><b>LUT</b></td>
+<td></td>
 </tr>
 
 
-<? while ($rivi = $dogs->fetch()) {
-   echo "<tr>";
-   echo "<td>" . $rivi["reknro"] . "</td>";
-   echo "<td>" . $rivi["nimi"] . "</td>";
-   echo "<td>" . $rivi["syntynyt"] . "</td>";
-   echo "<td>" . $rivi["vari"] . "</td>";
-   echo "<td>" . $rivi["isa"] . "</td>";
-   echo "<td>" . $rivi["ema"] . "</td>";
-   echo "<td>" . $rivi["rotu"] . "</td>";
-   echo "<td>" . $rivi["omistaja"] . "</td>";
-   if ($rivi["koiran_tila"] == 1)
-       echo "<td>" . "Active" . "</td>";
-   else echo "<td>" . "Inactive" . "</td>";
-   if (is_null ($rivi["koetulos_lut"]))
-   echo "<td>" . "-" . "</td>";   
-   else echo "<td>" . $rivi["koetulos_lut"] . "</td>";
-   echo "</tr>";
-}
-echo "</table>";
-?>
-</p>
-</body>
+<?php while ($rivi = $dogs->fetch()) {?>
+   <tr>
+   <td><?php echo $rivi["reknro"];?></td>
+   <td><?php echo $rivi["nimi"];?></td>
+   <td><?php echo $rivi["syntynyt"];?></td>
+   <td><?php echo $rivi["vari"];?></td>
+   <td><?php echo $rivi["isa"];?></td>
+   <td><?php echo $rivi["ema"];?></td>
+   <td><?php echo $rivi["rotu"];?></td>
+   <td><?php echo $rivi["omistaja"];?></td>
+   <td><?php echo ($rivi["koiran_tila"] == 1 ? 'Active' : 'Inactive'); ?></td>
+   <td><?php echo (!empty($rivi["koetulos_lut"]) ? $rivi["koetulos_lut"] : '-'); ?> </td>
+
+   <td><a href="<?php echo Atomik::url('/editdog',array('reknro'=>$rivi["reknro"]));?>">Muokkaa</a> </td>
+   </tr>
+<?php }?>
+</table>
