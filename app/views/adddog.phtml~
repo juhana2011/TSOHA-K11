@@ -1,3 +1,4 @@
+<html>
 <h1>Lis&auml;&auml; uusi koira</h1>
 <table>
 <form action="" method="post">
@@ -150,3 +151,4 @@
 </table>
 <br><br><br>
 <a href="http://localhost/?action=index">Etusivulle</a><br>
+</html>
