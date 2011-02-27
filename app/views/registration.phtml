@@ -1,7 +1,20 @@
+
 <h3>Rekister&ouml;itymissivu</h3>
+<strong>(kaikki tiedot ovat pakollisia)</strong>
+<br><br>
+<table>
+	<form action="" method="post">
+		<tr><td>Nimi:</td><td><input type="text" name="nimi" maxlength="40"/></td></tr>
+		<tr><td>Osoite:</td><td><input type="text" name="osoite" maxlength="70"/></td></tr>
+		<tr><td>Puhelin:</td><td><input type="text" name="puhelinnumero" maxlength="20"/></td></tr>
+		<tr><td>S&auml;hk&ouml;posti:</td><td><input type="text" name="email" maxlength="65"/></td></tr>
+		<tr><td>K&auml;ytt&auml;j&auml;tunnus:</td><td><input type="text" name="kayttajatunnus" maxlength="10"/></td><td>max 10 merkki&auml;</td></tr>
+		<tr><td>Salasana:</td><td><input type="password" name="salasana" maxlength="10"/></td><td>max 10 merkki&auml;</td></tr>
+		<tr><td>Kirjoita salasana uudelleen:</td><td><input type="password" name="salasana_toisto" maxlength="10"/></td></tr>
+		<tr><td></td><td><input type="hidden" name="kayttajaryhma" value="3"/></td></tr>
+		<tr><td><input type="submit" value="L&auml;het&auml; rekister&ouml;ityminen"/></tr>
+		<td><input type="reset";/></td></tr>
+	</form>
+</table>
 <br><br><br>
-<b>In progress</b>
-<br><br><br>
-<a href="http://localhost/?action=index">Etusivulle</a><br>
-
-
+<a href="<?php echo Atomik::url("index");?>">Etusivulle</a><br>

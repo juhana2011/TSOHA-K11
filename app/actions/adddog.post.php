@@ -1,6 +1,11 @@
 <?php
-	
 
+		//Check if the dog's registration number already exists in database
+$tarkasta_reknro = Atomik_Db::query('select * from koirat where reknro=?',array($_POST['reknro']));
+if ($tarkasta_reknro->rowCount() > 0) {
+	Atomik::flash('Samalla rekisterinumerolla on jo koira olemassa, tarkista tai ota yhteys p&auml;&auml;k&auml;ytt&auml;j&auml;&auml;n','error');
+		Atomik::redirect('adddog');
+}
 
 		// Set a custom error message if required field information is missing
 	Atomik::set('app/filters/required_message', '%s on pakollinen tieto !');
@@ -45,7 +50,7 @@
 	    'selka_vaaraika' => array('filter' => '/TRUE|FALSE|\s/',
 			      'required' => false,
 			      'message' => 'Koiran nimi puuttuu tai liian pitk&auml;'),
-            'polvitulos' => array('filter' => '/0|1|2|\s/',
+            'polvitulos' => array('filter' => '/0|1|2|3|\s/',
 			      'required' => false,
 			      'message' => 'Koiran polvitulos v&auml;&auml;rin'),
             'nayttelytulos' => array('filter' => '/.{0,9}/',

@@ -96,7 +96,7 @@
 		Atomik::redirect('listdogs');
     } elseif ($_POST['nappula'] == 'Poista') {
             echo "Koiranpoistorutiini";
-	   } else {}
+	   }
  
 
 

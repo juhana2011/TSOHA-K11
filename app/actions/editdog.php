@@ -1,4 +1,25 @@
 <?php
+if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
+Atomik::flash('Et ole kirjautunut sis&auml;&auml;n tai k&auml;ytt&ouml;oikeustasosi ei ole riitt&auml;v&auml;','error');
+	Atomik::redirect('login');
+}
+
+		//If user not administrator, can edit only dog of his own
+if ($_SESSION['usergroup'] != 1) {
+	$tarkistus = Atomik_Db::query('select omistaja from koirat where koirat.reknro=?',array($_GET['reknro']));
+		//This dog's owner email into an apu variable
+	foreach($tarkistus as $apu):
+		$omistajanemail = $apu['omistaja'];
+	endforeach;
+	
+		//Evaluate if user is really the owner of this dog
+	if ($_SESSION['email'] != $omistajanemail) {
+		Atomik::flash('Sinulla ei ole oikeuksia valitsemasi koiran tietojen muuttamiseen','error');
+		echo $_SESSION['email'];
+	Atomik::redirect('listdogs');
+	}
+}
+
 
 //Query the dog information and results from db, regnr passed as parameter in url
 
