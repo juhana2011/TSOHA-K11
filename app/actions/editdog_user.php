@@ -1,20 +1,30 @@
 <?php
-				//Check if logged in
+				//Check if user logged in
 if (!isset($_SESSION['username']) && !isset($_SESSION['password'])) {
 Atomik::flash('Et ole kirjautunut sis&auml;&auml;n tai k&auml;ytt&ouml;oikeustasosi ei ole riitt&auml;v&auml;','error');
 	Atomik::redirect('login');
 }
-		//If user not in administrators' group, redirect to page editdog_user where limited editing possibilities
-//if ($_SESSION['usergroup'] != 1) {
-//Atomik::redirect('editdog_user');
-//}
 
-		//Query the dog information and results from db, regnr passed as parameter in url
+		//If user is not (and when on this page not) an administrator, can edit only dog of his own
+	$tarkistus = Atomik_Db::query('select omistaja from koirat where koirat.reknro=?',array($_GET['reknro']));
+		//This dog's owner email into an apu variable
+	foreach($tarkistus as $apu):
+		$omistajanemail = $apu['omistaja'];
+	endforeach;
+	
+				//Evaluate if user is really the owner of this dog
+	if ($_SESSION['email'] != $omistajanemail) {
+		Atomik::flash('Sinulla ei ole oikeuksia valitsemasi koiran tietojen muuttamiseen','error');
+		echo $_SESSION['email'];
+	Atomik::redirect('listdogs');
+	}
+
+				//Query the dog information and results from db, regnr passed as parameter in url
 
 $dogs = Atomik_Db::query('select * from koirat LEFT JOIN koirien_tulokset ON koirat.reknro=koirien_tulokset.koira where koirat.reknro=?',array($_GET['reknro']));
 $owners = Atomik_Db::query('select email from kayttajat'); 
 
-		//Creating an array of owners from an object
+				//Creating an array of owners from an object
 
 $i = 0;
 foreach($owners as $owner):
@@ -22,7 +32,7 @@ foreach($owners as $owner):
    $i++;
 endforeach;
 
-		//Initialize and set this dog's information from array to variables
+//Initialize and set this dog's information from array to variables
   
 foreach ($dogs as $dog):
 $reknro = $dog['reknro'];

@@ -1,0 +1,26 @@
+<!-- This page lists the USERS on screen -->
+<table border>
+<tr><td><b>***********</b></td>
+<td><b>NIMI</b></td>
+<td><b>OSOITE</b></td>
+<td><b>PUHELINNUMERO</b></td>
+<td><b>EMAIL</b></td>
+</tr>
+
+<!-- Loop through all users in database and fetch their information -->
+
+<?php while ($rivi = $users->fetch()) {?>
+
+	<!-- If user is not in admin group, cannot get onto this page -->
+	<tr>
+   <td><a href="<?php echo Atomik::url('/edituser',array('email'=>$rivi["email"]));?>">Muokkaa</a></td>
+   <td><?php echo $rivi["nimi"];?></td>
+   <td><?php echo $rivi["osoite"];?></td>
+   <td><?php echo $rivi["puhelinnumero"];?></td>
+   <td><?php echo $rivi["email"];?></td>
+   </tr>
+<?php }?>
+</table>
+<br><br><br>
+<!-- Link to front page -->
+<a href="<?php echo Atomik::url("index");?>">Etusivulle</a>

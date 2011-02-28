@@ -1,21 +1,39 @@
-
+<!-- This page lists the dogs on screen -->
 <table border>
-<tr><td><b>REKISTERINUMERO</b></td>
+<tr><td><b>***********</b></td>
+<td><b>REKISTERINUMERO</b></td>
 <td><b>NIMI</b></td>
-<td><b>SYNTYMAAIKA</b></td>
-<td><b>VARI</b></td>
-<td><b>ISA</b></td>
-<td><b>EMA</b></td>
+<td><b>SYNTYM&Auml;AIKA</b></td>
+<td><b>V&Auml;RI</b></td>
+<td><b>IS&Auml;</b></td>
+<td><b>EM&Auml;</b></td>
 <td><b>ROTU</b></td>
 <td><b>OMISTAJA</b></td>
-<td><b>TILA</b></td>
+<td><b>SELK&Auml;TULOS</b></td>
+<td><b>SELK&Auml;_HUOM</b></td>
+<td><b>SELK&Auml;KUVAUSIK&Auml;</b></td>
+<td><b>POLVITULOS</b></td>
 <td><b>LUT</b></td>
-<td></td>
+<td><b>M&Auml;AJ</b></td>
+<td><b>LUME</b></td>
+<td><b>VERI</b></td>
+<td><b>PIKA</b></td>
+<td><b>MEJ&Auml;</b></td>
+<td><b>VAHI</b></td>
+<td><b>HIRV-J</b></td>
 </tr>
+
+<!-- Loop through all dogs in database and fetch their information -->
+<?php if (isset($_POST['koirulit'])) $dogs = $_POST['koirulit']; ?>
 
 
 <?php while ($rivi = $dogs->fetch()) {?>
    <tr>
+   <!-- If user is not in admin group, can open only a limited view (link directs to editdog page) -->
+   <!-- If user is an administrator can open unlimited view (link directs to editdog_user page) -->
+   <td><a href="<?php if(isset($_SESSION['usergroup']) && ($_SESSION['usergroup'] == 1))
+   echo Atomik::url('/editdog',array('reknro'=>$rivi["reknro"]));
+   else echo Atomik::url('/editdog_user',array('reknro'=>$rivi["reknro"]));?>">Muokkaa</a></td>
    <td><?php echo $rivi["reknro"];?></td>
    <td><?php echo $rivi["nimi"];?></td>
    <td><?php echo $rivi["syntynyt"];?></td>
@@ -24,12 +42,34 @@
    <td><?php echo $rivi["ema"];?></td>
    <td><?php echo $rivi["rotu"];?></td>
    <td><?php echo $rivi["omistaja"];?></td>
-   <td><?php echo $rivi["koiran_tila"];?></td>
-   <td><?php echo $rivi["koetulos_lut"]; ?> </td>
-
-   <td><a href="<?php echo Atomik::url('/editdog',array('reknro'=>$rivi["reknro"]));?>">Muokkaa</a> </td>
+   <td><?php echo $rivi["selkatulos"]; ?> </td>
+   <td><?php echo $rivi["selka_huom"];?></td>
+   <td><?php echo $rivi["selka_vaaraika"];?></td>
+   <td><?php echo $rivi["polvitulos"];?></td>
+   <td><?php echo $rivi["koetulos_lut"];?></td>
+   <td><?php echo $rivi["koetulos_maaj"];?></td>
+   <td><?php echo $rivi["koetulos_lume"];?></td>
+   <td><?php echo $rivi["koetulos_veri"];?></td>
+   <td><?php echo $rivi["koetulos_pika"];?></td>
+   <td><?php echo $rivi["koetulos_meja"];?></td>
+   <td><?php echo $rivi["koetulos_vahi"]; ?> </td>
+   <td><?php echo $rivi["koetulos_hirvj"]; ?> </td>
    </tr>
 <?php }?>
 </table>
 <br><br><br>
-<a href="http://localhost/?action=index">Etusivulle</a><br>
+<!-- Filter for users to query dogs with certain criteria -->
+<strong>Sy&ouml;t&auml; sana tai sanan alkuosa, jos haluat hakea rajatuilla kriteereill&auml;</strong><br>
+<strong>Huomioi isot ja pienet kirjaimet!</strong><br>
+<table>
+<form action="/?action=listdogs" method="post">
+<tr><td>Sy&ouml;t&auml; rekisterinumero:</td><td><input type="text" name="hkreknro" maxlength="11" value=""/></td></tr>
+<tr><td>Sy&ouml;t&auml; koiran nimi:</td><td><input type="text" name="hknimi" maxlength="40" value=""/></td></tr>
+<tr><td>Sy&ouml;t&auml; v&auml;ri:</td><td><input type="text" name="hkvari" maxlength="25" value=""/></td></tr>
+<tr><td><input name="submit" type="submit" value="Hae"/></td></tr>
+<tr><td><input type="reset" value="Tyhjenn&auml kent&auml;t";/></td></tr>
+</form>
+</table><br>
+<!-- Link to front page -->
+<a href="<?php echo Atomik::url("listdogs");?>">Lataa t&auml;m&auml; sivu uudelleen</a><br><br>
+<a href="<?php echo Atomik::url("index");?>">Etusivulle</a>

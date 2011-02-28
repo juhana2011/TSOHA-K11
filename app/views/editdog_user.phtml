@@ -1,4 +1,4 @@
-<!-- Page for administrators editing/changing a dog's information -->
+<!-- Page for regular users to edit their own dogs' information -->
 <table>
 <form action="" method="post">
 
@@ -158,8 +158,8 @@ if($osoiterivi == $omistaja) {
 
 <tr><td>Selk&auml;kuvausik&auml;:</td><td><select name="selka_vaaraika">
 <option value=""></option>
-<option value="FALSE"<?php echo $selkahuom0_sel;?>>Kuva oikeassa i&auml;ss&auml;</option>
-<option value="TRUE"<?php echo $selkahuom1_sel;?>>Kuva v&auml;&auml;r&auml;ss&auml; i&auml;ss&auml;</option>
+<option value="FALSE"<?php echo $selkaika0_sel;?>>Kuva oikeassa i&auml;ss&auml;</option>
+<option value="TRUE"<?php echo $selkaika1_sel;?>>Kuva v&auml;&auml;r&auml;ss&auml; i&auml;ss&auml;</option>
 </select></td>
 
 <td>&nbsp;&nbsp;&nbsp;</td><td>Polvitulos:</td><td><select name="polvitulos">
@@ -171,9 +171,8 @@ if($osoiterivi == $omistaja) {
 </select></td></tr>
 <tr></tr>
 <tr><td><input type="submit" name="nappula" value="Muuta" /></td></tr>
-<tr><td><input type="submit" name="nappula" value="Poista" /></td></tr>
 
  </form>
 </table>
 <br><br>
-<a href="http://localhost/?action=index">Etusivulle</a><br>
+<a href="<?php echo Atomik::url("index");?>">Etusivulle</a>

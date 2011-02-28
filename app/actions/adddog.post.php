@@ -1,6 +1,6 @@
 <?php
 
-		//Check if the dog's registration number already exists in database
+		//Check if the dog's register number already exists in database
 $tarkasta_reknro = Atomik_Db::query('select * from koirat where reknro=?',array($_POST['reknro']));
 if ($tarkasta_reknro->rowCount() > 0) {
 	Atomik::flash('Samalla rekisterinumerolla on jo koira olemassa, tarkista tai ota yhteys p&auml;&auml;k&auml;ytt&auml;j&auml;&auml;n','error');

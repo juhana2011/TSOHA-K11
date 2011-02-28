@@ -95,7 +95,9 @@
 		Atomik::flash('Koiran tiedot muutettu onnistuneesti!', 'success');
 		Atomik::redirect('listdogs');
     } elseif ($_POST['nappula'] == 'Poista') {
-            echo "Koiranpoistorutiini";
+			Atomik_Db::delete('koirat', array('reknro' => $_POST['reknro']));
+			Atomik::flash('Koira poistettu j&auml;rjestelm&auml;st&auml; onnistuneesti!', 'success');
+			Atomik::redirect('listdogs');
 	   }
  
 
