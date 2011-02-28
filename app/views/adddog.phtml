@@ -127,23 +127,23 @@
 </select></td>
 
 <td>&nbsp;&nbsp;&nbsp;</td><td>Selk&auml; muuhuom:</td><td><select name="selka_huom">
-<option value=""></option>
-<option value="FALSE">Ei huomautettavaa</option>
-<option value="TRUE">Huomautettavaa</option>
+<option value="1">Ei kuvattu</option>
+<option value="2">Ei huomautettavaa</option>
+<option value="3">Huomautettavaa</option>
 </select></td></tr>
 
 <tr><td>Selk&auml;kuvausik&auml;:</td><td><select name="selka_vaaraika">
-<option value=""></option>
-<option value="FALSE">Kuva oikeassa i&auml;ss&auml;</option>
-<option value="TRUE">Kuva v&auml;&auml;r&auml;ss&auml; i&auml;ss&auml;</option>
+<option value="1">Ei kuvattu</option>
+<option value="2">Ik&auml; OK</option>
+<option value="3">Ik&auml; v%auml;&auml;r&auml;</option>
 </select></td>
 
 <td>&nbsp;&nbsp;&nbsp;</td><td>Polvitulos:</td><td><select name="polvitulos">
-<option value="">Ei kuvattu</option>
-<option value="0">Vasen</option>
-<option value="1">Oikea</option>
-<option value="2">Vasen+Oikea</option>
-<option value="3">Ei huomautettavaa</option>
+<option value="1">Ei kuvattu</option>
+<option value="2">Polvet OK</option>
+<option value="3">Vasen</option>
+<option value="4">Oikea</option>
+<option value="5">Vasen+oikea</option>
 </select></td></tr>
 <tr></tr>
 <tr><td><input type="submit" value="L&auml;het&auml; koiran tiedot"/><input type="reset";/></td>
@@ -151,4 +151,4 @@
 </form>
 </table>
 <br><br><br>
-<a href="http://localhost/?action=index">Etusivulle</a><br>
+<a href="<?php echo Atomik::url("index");?>">Etusivulle</a>

@@ -151,23 +151,23 @@ if($osoiterivi == $omistaja) {
 </select></td>
 
 <td>&nbsp;&nbsp;&nbsp;</td><td>Selk&auml; muuhuom:</td><td><select name="selka_huom">
-<option value=""></option>
-<option value="FALSE"<?php echo $selkahuom0_sel;?>>Ei huomautettavaa</option>
-<option value="TRUE"<?php echo $selkahuom1_sel;?>>Huomautettavaa</option>
+<option value="1"<?php echo $selkahuom1_sel;?>>Ei kuvattu</option>
+<option value="2"<?php echo $selkahuom2_sel;?>>Ei huomautettavaa</option>
+<option value="3"<?php echo $selkahuom3_sel;?>>Huomautettavaa</option>
 </select></td></tr>
 
 <tr><td>Selk&auml;kuvausik&auml;:</td><td><select name="selka_vaaraika">
-<option value=""></option>
-<option value="FALSE"<?php echo $selkaika0_sel;?>>Kuva oikeassa i&auml;ss&auml;</option>
-<option value="TRUE"<?php echo $selkaika1_sel;?>>Kuva v&auml;&auml;r&auml;ss&auml; i&auml;ss&auml;</option>
+<option value="1"<?php echo $selkaika1_sel;?>>Ei kuvattu</option>
+<option value="2"<?php echo $selkaika2_sel;?>>Ik&auml; OK</option>
+<option value="3"<?php echo $selkaika3_sel;?>>Ik&auml; v&auml;&auml;r&auml;</option>
 </select></td>
 
 <td>&nbsp;&nbsp;&nbsp;</td><td>Polvitulos:</td><td><select name="polvitulos">
-<option value=""></option>
-<option value="0"<?php echo $polvitulos0_sel;?>>Vasen</option>
-<option value="1"<?php echo $polvitulos1_sel;?>>Oikea</option>
-<option value="2"<?php echo $polvitulos2_sel;?>>Vasen+Oikea</option>
-<option value="3"<?php echo $polvitulos3_sel;?>>Ei huomautettavaa</option>
+<option value="1"<?php echo $polvitulos1_sel;?>>Ei kuvattu</option>
+<option value="2"<?php echo $polvitulos2_sel;?>>Polvet OK</option>
+<option value="3"<?php echo $polvitulos3_sel;?>>Vasen</option>
+<option value="4"<?php echo $polvitulos4_sel;?>>Oikea</option>
+<option value="5"<?php echo $polvitulos5_sel;?>>Vasen+oikea</option>
 </select></td></tr>
 <tr></tr>
 <tr><td><input type="submit" name="nappula" value="Muuta" /></td></tr>

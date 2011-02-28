@@ -420,15 +420,18 @@ if ($selkatulos == 'K0') {
                                                                                
     //Initialize selka_huom variables                            
 
-$selkahuom0_sel = '';
 $selkahuom1_sel = '';
+$selkahuom2_sel = '';
+$selkahuom3_sel = '';
 
     //Setting existing values from db for form field default
                                                             
-if ($selka_huom == 'FALSE') {                            
-        $selkahuom0_sel = ' SELECTED';                            
-}   elseif ($selka_huom == 'TRUE') {                  
-        $selkahuom1_sel = ' SELECTED';                          
+if ($selka_huom == '1') {                            
+        $selkahuom1_sel = ' SELECTED';                            
+}   elseif ($selka_huom == '2') {                  
+        $selkahuom2_sel = ' SELECTED';
+}   elseif ($selka_huom == '3') {                  
+		$selkahuom3_sel = ' SELECTED';                          
 } else {}                                                   
 //---------------------------------SELKA_HUOM PART END--------------
 
@@ -437,38 +440,42 @@ if ($selka_huom == 'FALSE') {
                                                                                
     //Initialize selka_vaaraika variables                            
 
-$selkaika0_sel = '';
 $selkaika1_sel = '';
-
+$selkaika2_sel = '';
+$selkaika3_sel = '';
     //Setting existing values from db for form field default
                                                             
-if ($selka_vaaraika == 'FALSE') {                            
-        $selkaika0_sel = ' SELECTED';                            
-}   elseif ($selka_vaaraika == 'TRUE') {                  
-        $selkaika1_sel = ' SELECTED';                          
+if ($selka_vaaraika == '1') {                            
+        $selkaika1_sel = ' SELECTED';                            
+}   elseif ($selka_vaaraika == '2') {                  
+        $selkaika2_sel = ' SELECTED';                     
+}   elseif ($selka_vaaraika == '3') {                  
+        $selkaika3_sel = ' SELECTED';                     		
 } else {}                                                   
 //---------------------------------SELKA_VAARAIKA PART END--------------
 
 
 //---------------------------------POLVITULOS PART BEGIN--------------
                                                                                
-    //Initialize polvitulos variables                            
-
-$polvitulos0_sel = '';
+	//Initialize polvitulost variables
 $polvitulos1_sel = '';
 $polvitulos2_sel = '';
 $polvitulos3_sel = '';
+$polvitulos4_sel = '';
+$polvitulos5_sel = '';
 
     //Setting existing values from db for form field default
                                                             
-if ($polvitulos == '0') {                            
-        $polvitulos0_sel = ' SELECTED';                            
-}   elseif ($polvitulos == '1') {                  
-        $polvitulos1_sel = ' SELECTED';            
-}   elseif ($polvitulos == '2') {
-        $polvitulos2_sel = ' SELECTED';                          
+if ($polvitulos == '1') {                            
+        $polvitulos1_sel = ' SELECTED';                            
+}   elseif ($polvitulos == '2') {                  
+        $polvitulos2_sel = ' SELECTED';            
 }   elseif ($polvitulos == '3') {
         $polvitulos3_sel = ' SELECTED';                          
+}   elseif ($polvitulos == '4') {
+        $polvitulos4_sel = ' SELECTED';
+}   elseif ($polvitulos == '5') {
+        $polvitulos5_sel = ' SELECTED';		
 } else {}                                                   
 //---------------------------------POLVITULOS PART END--------------
 
