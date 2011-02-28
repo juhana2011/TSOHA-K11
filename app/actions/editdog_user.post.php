@@ -43,7 +43,7 @@
 			'selka_vaaraika' => array('filter' => '/TRUE|FALSE|\s/',
 							'required' => false,
 							'message' => 'Koiran nimi puuttuu tai liian pitk&auml;'),
-			'polvitulos' => array('filter' => '/0|1|2|\s/',
+			'polvitulos' => array('filter' => '/0|1|2|3|\s/',
 							'required' => false,
 							'message' => 'Koiran polvitulos v&auml;&auml;rin'),
 			'nayttelytulos' => array('filter' => '/.{0,9}/',

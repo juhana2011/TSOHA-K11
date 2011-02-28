@@ -2,7 +2,8 @@
 body {
 	background: #fdfdfd;
 	font-family: Arial, sans-serif;
-}
+	font-size:0.875em;
+	}
 
 #atomik-wrapper {
 	margin: 50px auto auto;
@@ -12,10 +13,12 @@ body {
 
 	#atomik {
 		background: #f8ffea;
-		border: 3px solid #aad944;
+		border: 2px solid #aad944;
 		margin-bottom: 10px;
-		padding: 10px;
+		padding: 5px;
 		text-align: left;
+		
+		
 	}
 	
 		#atomik h1 {
