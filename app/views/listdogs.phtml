@@ -43,9 +43,9 @@
    <td><?php echo $rivi["rotu"];?></td>
    <td><?php echo $rivi["omistaja"];?></td>
    <td><?php echo $rivi["selkatulos"]; ?> </td>
-   <td><?php echo $rivi["selka_huom"];?></td>
-   <td><?php echo $rivi["selka_vaaraika"];?></td>
-   <td><?php echo $rivi["polvitulos"];?></td>
+   <td><?php if($rivi["selka_huom"] == 1) echo "Ei kuvattu"; elseif ($rivi["selka_huom"] == 2) echo "Ei huomautettavaa"; elseif ($rivi["selka_huom"] == 3) echo "Huomautettavaa" ;?></td>
+   <td><?php if($rivi["selka_vaaraika"] == 1) echo "Ei kuvattu"; elseif ($rivi["selka_vaaraika"] == 2) echo "Ik&auml; OK"; elseif ($rivi["selka_vaaraika"] == 3) echo "Ik&auml; v&auml;&auml;r&auml;" ;?></td>
+   <td><?php if($rivi["polvitulos"] == 1) echo "Ei kuvattu"; elseif ($rivi["polvitulos"] == 2) echo "Polvet OK"; elseif ($rivi["polvitulos"] == 3) echo "Vasen";  elseif ($rivi["polvitulos"] == 4) echo "Oikea"; elseif ($rivi["polvitulos"] == 5) echo "Vasen+oikea" ;?></td>
    <td><?php echo $rivi["koetulos_lut"];?></td>
    <td><?php echo $rivi["koetulos_maaj"];?></td>
    <td><?php echo $rivi["koetulos_lume"];?></td>
