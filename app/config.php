@@ -31,4 +31,4 @@ Atomik::set(array (
   ),
 )
 );
-Atomik::set('plugins/Db', array('dsn'  => 'pgsql:host=127.0.0.1;dbname=uroskanta', 'username'=>'',''  => ''));
+Atomik::set('plugins/Db', array('dsn'  => 'pgsql:host=127.0.0.1;dbname=', 'username'=>'','password'  => ''));

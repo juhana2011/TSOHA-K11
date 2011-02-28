@@ -57,6 +57,7 @@ $koetulos_pika = $dog['koetulos_pika'];
 $koetulos_meja = $dog['koetulos_meja'];
 $koetulos_vahi = $dog['koetulos_vahi'];
 $koetulos_hirvj = $dog['koetulos_hirvj'];
+$sahkoposti = $dog['omistajan_email'];
 endforeach;
 
 //---------------------------------ROTU PART BEGIN--------------

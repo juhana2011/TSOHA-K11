@@ -1,6 +1,7 @@
 <!-- This page lists the dogs on screen -->
 <table border>
 <tr><td><b>***********</b></td>
+<td><b>KOIRAN STATUS</b></td>
 <td><b>REKISTERINUMERO</b></td>
 <td><b>NIMI</b></td>
 <td><b>SYNTYM&Auml;AIKA</b></td>
@@ -35,6 +36,7 @@
    <td><a href="<?php if(isset($_SESSION['usergroup']) && ($_SESSION['usergroup'] == 1))
    echo Atomik::url('/editdog',array('reknro'=>$rivi["reknro"]));
    else echo Atomik::url('/editdog_user',array('reknro'=>$rivi["reknro"]));?>">Muokkaa</a></td>
+   <td><?php if ($rivi["koiran_tila"]==0) echo "Poistettu"; elseif ($rivi["koiran_tila"]==1)  echo "Ok"; elseif ($rivi["koiran_tila"]==2) echo "Odottaa hyv&auml;ksymist&auml;"; ?> </td>
    <td><?php echo $rivi["reknro"];?></td>
    <td><?php echo $rivi["nimi"];?></td>
    <td><?php echo $rivi["syntynyt"];?></td>
@@ -56,6 +58,7 @@
    <td><?php echo $rivi["koetulos_meja"];?></td>
    <td><?php echo $rivi["koetulos_vahi"]; ?> </td>
    <td><?php echo $rivi["koetulos_hirvj"]; ?> </td>
+      
    </tr>
 <?php }?>
 </table>
@@ -68,7 +71,7 @@
 <tr><td>Sy&ouml;t&auml; rekisterinumero:</td><td><input type="text" name="hkreknro" maxlength="11" value=""/></td></tr>
 <tr><td>Sy&ouml;t&auml; koiran nimi:</td><td><input type="text" name="hknimi" maxlength="40" value=""/></td></tr>
 <tr><td>Sy&ouml;t&auml; v&auml;ri:</td><td><input type="text" name="hkvari" maxlength="25" value=""/></td></tr>
-<tr><td><input name="submit" type="submit" value="Hae"/></td></tr>
+<tr><td><input name="submit" type="submit" value="Hae"/></td><td>Saat kaikki koirat n&auml;kyviin kun painat Tyhjenn&auml; kent&auml;t ja sitten Hae</tr>
 <tr><td><input type="reset" value="Tyhjenn&auml kent&auml;t";/></td></tr>
 </form>
 </table><br>

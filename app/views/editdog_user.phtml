@@ -2,7 +2,7 @@
 <table>
 <form action="" method="post">
 
-<tr><td>Rekisterinumero:</td><td><input type="text" name="reknro" maxlength="11" value="<?php echo $reknro; ?>"/></td>
+<tr><td>Rekisterinumero:</td><td><input type="text" name="reknro" maxlength="11" value="<?php echo $reknro; ?>" readonly="readonly"/></td>
 
 <td>&nbsp;&nbsp;&nbsp;</td><td>N&auml;yttelytulos:</td>
 <td><select name="nayttelytulos">
@@ -18,7 +18,7 @@
 <option value="T"<?php echo $t_sel; ?>>T</option>
 </select></td></tr>
 
-<tr><td>Nimi:</td><td><input type="text" name="nimi" maxlength="40" value="<?php echo $nimi; ?>"/> </td>
+<tr><td>Nimi:</td><td><input type="text" name="nimi" maxlength="40" value="<?php echo $nimi; ?>" readonly="readonly"/> </td>
 
 <td>&nbsp;&nbsp;&nbsp;</td><td>LUT-tulos:</td>
 <td><select name="koetulos_lut">
@@ -31,7 +31,7 @@
 <option value="LUTE"<?php echo $lute_sel; ?>>LUTE</option>
 </select></td></tr>
 
-<tr><td>Syntynyt:</td><td><input type="text" name="syntynyt" maxlength="10" value="<?php echo $syntynyt; ?>"/></td>
+<tr><td>Syntynyt:</td><td><input type="text" name="syntynyt" maxlength="10" value="<?php echo $syntynyt; ?>" readonly="readonly"/></td>
 
 <td>&nbsp;&nbsp;&nbsp;</td><td>M&Auml;AJ-tulos:</td>
 <td><select name="koetulos_maaj">
@@ -42,7 +42,7 @@
 <option value="MAAJ3"<?php echo $maaj3_sel; ?>>M&Auml;AJ-3</option>
 </select></td></tr>
 
-<tr><td>V&auml;ri:</td><td><input type="text" name="vari" maxlength="25" value="<?php echo $vari; ?>"/></td>
+<tr><td>V&auml;ri:</td><td><input type="text" name="vari" maxlength="25" value="<?php echo $vari; ?>" readonly="readonly"/></td>
 
 <td>&nbsp;&nbsp;&nbsp;</td><td>LUME-tulos:</td><td><select name="koetulos_lume">
 <option value=""></option>
@@ -50,7 +50,7 @@
 <option value="LUME1"<?php echo $lume1_sel; ?>>LUME1</option>
 </select></td></tr>
 
-<tr><td>Is&auml;:</td><td><input type="text" name="isa" maxlength="40" value="<?php echo $isa; ?>"/></td>
+<tr><td>Is&auml;:</td><td><input type="text" name="isa" maxlength="40" value="<?php echo $isa; ?>" readonly="readonly"/></td>
 
 <td>&nbsp;&nbsp;&nbsp;</td><td>VERI-tulos:</td><td><select name="koetulos_veri">
 <option value=""></option>
@@ -60,23 +60,15 @@
 <option value="VERI3"<?php echo $veri3_sel; ?>>VERI-3</option>
 </select></td></tr>
 
-<tr><td>Em&auml;:</td><td><input type="text" name="ema" maxlength="40" value="<?php echo $ema; ?>"/></td>
+<tr><td>Em&auml;:</td><td><input type="text" name="ema" maxlength="40" value="<?php echo $ema; ?>" readonly="readonly"/></td>
 
 <td>&nbsp;&nbsp;&nbsp;</td><td>PIKA-tulos:</td><td><select name="koetulos_pika">
 <option value=""></option>
 <option value="PIKA1"<?php echo $pika1_sel; ?>>PIKA1</option>
 </select></td></tr>
 
-<tr><td>Rotu:</td><td><select name="rotu">
-<option value="KKKA"<?php echo $kkka_sel;?>>karkeakarvainen kaniinim&auml;yr&auml;koira</option>
-<option value="LKKA"<?php echo $lkka_sel;?>>lyhytkarvainen kaniinim&auml;yr&auml;koira</option>
-<option value="PKKA"<?php echo $pkka_sel;?>>pitk&auml;karvainen kaniinim&auml;yr&auml;koira</option>
-<option value="KKK"<?php echo $kkk_sel;?>>karkeakarvainen k&auml;&auml;pi&ouml;m&auml;yr&auml;koira</option>
-<option value="LKK"<?php echo $lkk_sel;?>>lyhytkarvainen k&auml;&auml;pi&ouml;m&auml;yr&auml;koira</option>
-<option value="PKK"<?php echo $pkk_sel;?>>pitk&auml;karvainen k&auml;&auml;pi&ouml;m&auml;yr&auml;koira</option>
-<option value="KK"<?php echo $kk_sel;?>>karkeakarvainen m&auml;yr&auml;koira</option>
-<option value="LK"<?php echo $lk_sel;?>>lyhytkarvainen m&auml;yr&auml;koira</option>
-<option value="PK"<?php echo $pk_sel;?>>pitk&auml;karvainen m&auml;yr&auml;koira</option></select></td>
+<tr><td>Rotu:</td><td><input type="text" name="rotu" maxlength="40" value="<?php echo $rotu; ?>" readonly="readonly"/></td>
+
 
 <td>&nbsp;&nbsp;&nbsp;</td><td>MEJ&Auml;-tulos:</td><td><select name="koetulos_meja">
 
@@ -90,28 +82,15 @@
 <option value="AVO3"<?php echo $avo3_sel;?>>AVO3</option>
 </select></td></tr>
 
-<tr><td>Omistaja:</td><td><select name="omistaja">
- <?php
-foreach ($taulu as $osoiterivi) {
-if($osoiterivi == $omistaja) {
- echo "<option value=\"$osoiterivi\" SELECTED>$osoiterivi</option>";
- } else {
-  echo "<option value=\"$osoiterivi\">$osoiterivi</option>";
-  }
-}
-?>
-</select></td>
+<tr><td>Omistaja:</td><td><input type="text" name="omistaja" maxlength="25" value="<?php echo $sahkoposti ;?>" readonly="readonly"/></td>
+
 
 <td>&nbsp;&nbsp;&nbsp;</td><td>VAHI-tulos:</td><td><select name="koetulos_vahi">
 <option value=""></option>
 <option value="VAHI1"<?php echo $vahi1_sel;?>>VAHI1</option>
 </select></td></tr>
 
-<tr><td>Koiran tila:</td><td><select name="koiran_tila">
-<option value="0"<?php echo $tila0_sel;?>>Poistettu</option>
-<option value="1"<?php echo $tila1_sel;?>>Ok</option>
-<option value="2"<?php echo $tila2_sel;?>>Odottaa</option>
-</select></td>
+<tr><td>Koiran tila:</td><td><input type="text" name="koiran_tila" maxlength="25" value="<?php echo $koiran_tila ;?>" readonly="readonly"/></td>
 
 <td>&nbsp;&nbsp;&nbsp;</td><td>HIRV-J-tulos:</td><td><select name="koetulos_hirvj">
 <option value=""></option>
@@ -170,9 +149,9 @@ if($osoiterivi == $omistaja) {
 <option value="5"<?php echo $polvitulos5_sel;?>>Vasen+oikea</option>
 </select></td></tr>
 <tr></tr>
-<tr><td><input type="submit" name="nappula" value="Muuta" /></td></tr>
-
- </form>
+<tr><td><input type="submit" name="nappula" value="Muuta" /></td>
+<td>Koiran tila on: <?if($koiran_tila == 0) echo "Poistettu"; elseif ($koiran_tila == 1) echo "Ok"; elseif ($koiran_tila == 2) echo "Odottaa hyv&auml;ksynt&auml;&auml;" ;?> </td></tr>
+</form>
 </table>
 <br><br>
 <a href="<?php echo Atomik::url("index");?>">Etusivulle</a>
