@@ -11,7 +11,7 @@ Atomik::flash('Et ole kirjautunut sis&auml;&auml;n tai k&auml;ytt&ouml;oikeustas
 
 		//Query the dog information and results from db, regnr passed as parameter in url
 
-$dogs = Atomik_Db::query('select * from koirat LEFT JOIN koirien_tulokset ON koirat.reknro=koirien_tulokset.koira where koirat.reknro=?',array($_GET['reknro']));
+$dogs = Atomik_Db::query('select * from koiralistausview where reknro=?',array($_GET['reknro']));
 $owners = Atomik_Db::query('select email from kayttajat'); 
 
 		//Creating an array of owners from an object

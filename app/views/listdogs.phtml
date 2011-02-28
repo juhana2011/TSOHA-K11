@@ -13,6 +13,7 @@
 <td><b>SELK&Auml;_HUOM</b></td>
 <td><b>SELK&Auml;KUVAUSIK&Auml;</b></td>
 <td><b>POLVITULOS</b></td>
+<td><b>NAYTTELYTULOS</b></td>
 <td><b>LUT</b></td>
 <td><b>M&Auml;AJ</b></td>
 <td><b>LUME</b></td>
@@ -46,6 +47,7 @@
    <td><?php if($rivi["selka_huom"] == 1) echo "Ei kuvattu"; elseif ($rivi["selka_huom"] == 2) echo "Ei huomautettavaa"; elseif ($rivi["selka_huom"] == 3) echo "Huomautettavaa" ;?></td>
    <td><?php if($rivi["selka_vaaraika"] == 1) echo "Ei kuvattu"; elseif ($rivi["selka_vaaraika"] == 2) echo "Ik&auml; OK"; elseif ($rivi["selka_vaaraika"] == 3) echo "Ik&auml; v&auml;&auml;r&auml;" ;?></td>
    <td><?php if($rivi["polvitulos"] == 1) echo "Ei kuvattu"; elseif ($rivi["polvitulos"] == 2) echo "Polvet OK"; elseif ($rivi["polvitulos"] == 3) echo "Vasen";  elseif ($rivi["polvitulos"] == 4) echo "Oikea"; elseif ($rivi["polvitulos"] == 5) echo "Vasen+oikea" ;?></td>
+   <td><?php echo $rivi["nayttelytulos"]; ?> </td>
    <td><?php echo $rivi["koetulos_lut"];?></td>
    <td><?php echo $rivi["koetulos_maaj"];?></td>
    <td><?php echo $rivi["koetulos_lume"];?></td>

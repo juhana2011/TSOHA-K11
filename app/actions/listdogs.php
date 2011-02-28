@@ -1,4 +1,5 @@
 <?php
 				//Database query to fetch all possible information what dogs can have in this system
-$dogs = A('db:select koirat.reknro as reknro,koirat.nimi as nimi,koirat.syntynyt as syntynyt,koirat.vari as vari,koirat.isa as isa,koirat.ema as ema,koirat.rotu as rotu,koirat.omistaja as omistajan_email,koirat.koiran_tila as koiran_tila,koirien_tulokset.selkatulos as selkatulos,koirien_tulokset.selka_huom as selka_huom,koirien_tulokset.selka_vaaraika as selka_vaaraika,koirien_tulokset.polvitulos as polvitulos,koirien_tulokset.koetulos_lut as koetulos_lut,koirien_tulokset.koetulos_maaj as koetulos_maaj,koirien_tulokset.koetulos_lume as koetulos_lume,koirien_tulokset.koetulos_veri as koetulos_veri,koirien_tulokset.koetulos_pika as koetulos_pika,koirien_tulokset.koetulos_meja as koetulos_meja,koirien_tulokset.koetulos_vahi as koetulos_vahi,koirien_tulokset.koetulos_hirvj as koetulos_hirvj,kayttajat.nimi as omistaja from (koirat left join kayttajat on koirat.omistaja = kayttajat.email) left join koirien_tulokset on koirat.reknro = koirien_tulokset.koira;');
+$dogs = A('db:select * from koiralistausview'); 
+
 
