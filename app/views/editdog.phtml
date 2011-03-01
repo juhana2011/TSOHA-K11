@@ -93,7 +93,7 @@
 <tr><td>Omistaja:</td><td><select name="omistaja">
  <?php
 foreach ($taulu as $osoiterivi) {
-if($osoiterivi == $omistaja) {
+if($osoiterivi == $sahkoposti) {
  echo "<option value=\"$osoiterivi\" SELECTED>$osoiterivi</option>";
  } else {
   echo "<option value=\"$osoiterivi\">$osoiterivi</option>";
@@ -176,4 +176,4 @@ if($osoiterivi == $omistaja) {
  </form>
 </table>
 <br><br>
-<a href="http://localhost/?action=index">Etusivulle</a><br>
+<a href="<?php echo Atomik::url("index");?>">Etusivulle</a>
